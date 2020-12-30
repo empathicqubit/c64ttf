@@ -955,9 +955,9 @@ def readCharBitmaps(fileName):
 
     # Shave off magic bytes and append zeroes so the length of the remaining
     # data is an integer multiple of 8.
-    data = data[2:]
+    #data = data[2:]
     while len(data) % 8 != 0:
-        data.append(0)
+        data += bytes([0])
 
     if len(data) == 0:
         print("No data found. ")
